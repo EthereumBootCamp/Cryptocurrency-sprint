@@ -96,17 +96,6 @@ describe('transfer function', () => {
   
   });
 
- //  it('sender account should have a sufficient balance ', async () => {
- //   let sth =  await inbox.methods.transfer(accounts[2],10).send ({
- //      from: accounts[1]
- //    });
- //   try {
- //  assert.equal(1, 2);
- //  } catch (err) {
- //    console.log(err)}
- // // assert(sth instanceof assert.AssertionError);
- // // assert.equal("blabla",sth);
- //  });
 })
 
 
