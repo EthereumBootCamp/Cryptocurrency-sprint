@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import web3 from './web3';
 import token from './token';
-
 class App extends Component {
   state = {
     owner: '',
@@ -11,73 +10,56 @@ class App extends Component {
     value: '',
     message: '',
     address: '',
-    addressFrom: '',
-    currentaddress:''
+    addressFrom: ''
   };
   componentDidMount() {
-    const owner =  accounts[0];
+    const owner =  "FILL_ME_IN";        // change this line with your current address;
     
     this.setState({ owner });
   }
 
-  onSubmit = async event => {
+  getTokens = async event => {
     event.preventDefault();
-    
+    const accounts = await // your code here;
     this.setState({ message: 'Waiting on transaction success...' });
-    await token.methods.getTokens().send({
-      from: accounts[0],
-      value: web3.utils.toWei(this.state.value, 'ether')
-    });
+    await // your code here;
     this.setState({ message: 'You got your tokens!' });
   };
-  onClick = async event => { 
+  tokenBalance = async event => { 
     event.preventDefault();
-    
+    const accounts = await // your code here;
     console.log(typeof accounts[0],  accounts[0]);
     this.setState({ message: 'Waiting on transaction success...' });
-    let result = await token.methods.balances(this.state.address).call({
-      from: accounts[0]
-    });
+    let result = await // your code here;
 console.log(result)
     this.setState({ message: result });
   };
   transfer = async event => {
     event.preventDefault();
-    
+    const accounts = await // your code here;
     this.setState({ message: 'Waiting on transaction success...' });
-     await token.methods.transfer(this.state.address,this.state.value).send({
-      from: accounts[0]
-    });
-// console.log(result)
+     await // your code here;
     this.setState({ message: "transaction has been entered" });
   };
   transferFrom = async event => {
     event.preventDefault();
-    
+    const accounts = await // your code here;
     this.setState({ message: 'Waiting on transaction success...' });
-     await token.methods.transferFrom(this.state.addressFrom, this.state.address,this.state.value).send({
-      from: accounts[0]
-    });
-// console.log(result)
+     await // your code here;
     this.setState({ message: "transaction has been entered" });
   };
   approve = async event => {
     event.preventDefault();
-    
+    const accounts = await // your code here;
     this.setState({ message: 'Waiting on transaction success...' });
-     await token.methods.approve(this.state.address,this.state.value).send({
-      from: accounts[0]
-    });
-// console.log(result)
+     await // your code here;
     this.setState({ message: "transaction has been entered" });
   };
   getEthers= async event => {
    event.preventDefault();
-   
+   const accounts = await // your code here;
    this.setState({ message: 'Waiting on transaction success...' });
-   await token.methods.getEthers(this.state.value).send({
-     from: accounts[0]
-   });
+   await // your code here;
    this.setState({ message: 'You sold your tokens!' });
   };
 
@@ -86,21 +68,10 @@ console.log(result)
       <div>
         <h2>My Currency</h2>
         <p>
-          This token is owned by {this.state.owner}. There are currently{' '}
-          {this.state.players.length} tokens left, competing to win{' '}
-          {web3.utils.fromWei(this.state.balance, 'ether')} ether!
+          This token is owned by {this.state.owner}.
         </p>
         <hr />
-          <h4>Current address</h4>
-          <div>
-            <label>Amount of ether to enter</label>
-            <input
-              value={this.state.value}
-              onChange={event => this.setState({ value: event.target.value })}
-            />
-          </div>
-        <hr />
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.getTokens}>
           <h4>Buy Tokens</h4>
           <div>
             <label>Amount of ether to enter</label>
@@ -112,7 +83,7 @@ console.log(result)
           <button>getTokens</button>
         </form>
         <hr />
-         <form onSubmit={this.onClick}>
+         <form onSubmit={this.tokenBalance}>
           <h4>View your balance of Tokens</h4>
           <div>
             <label>Enter the address</label>

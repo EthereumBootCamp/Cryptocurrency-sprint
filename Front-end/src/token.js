@@ -1,14 +1,7 @@
 import web3 from './web3';
-const { interface, bytecode } = require('../EthToken/compile');
+import compiledContract from '../EthToken/compile';
 
-deployedContract = await new web3.eth.Contract(JSON.parse(interface))
-    .deploy({
-      data: bytecode,
-      arguments: [100000000000000000000, 'BCCoin', 0, 'BCC' , 100]
-    })
-    .send({ from: accounts[0], gas: '1000000' });
+const address = "FILL_ME_IN";  // change this line with your contract address;
 
-const address = deployedContract.options.address;
-
-const abi = interface;
+const abi = // your code here;
 export default new web3.eth.Contract(abi, address);
