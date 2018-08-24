@@ -8,7 +8,7 @@ pragma solidity ^0.4.21;
 import "FILL_ME_IN";            // change this line
 
 
-contract BCCoin is EIP20Interface {
+contract BCCoin is Interface {
 
     uint256 constant private MAX_UINT256 = 2**256 - 1;
     // declare balances variable here
