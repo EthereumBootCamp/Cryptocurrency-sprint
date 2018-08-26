@@ -93,10 +93,10 @@ console.log(result)
             />
           </div>
           <button>Get balance!</button>
+          <p> Transaction state : {this.state.message} </p>
         </form>
         <hr />
-        <h1>{this.state.message}</h1>
-        <hr />
+        
          <form onSubmit={this.transfer}>
           <h4>Transfer token to an address</h4>
           <div>
